@@ -47,9 +47,8 @@ public abstract class AbstractSysTest {
     @Autowired
     protected PosDtoMapper posDtoMapper;
 
-    //TODO: Uncomment after user DTO mapper is implemented
-    //@Autowired
-    //protected UserDtoMapper userDtoMapper;
+    @Autowired
+    protected de.seuhd.campuscoffee.api.mapper.UserDtoMapper userDtoMapper;
 
     @LocalServerPort
     private Integer port;
@@ -57,8 +56,7 @@ public abstract class AbstractSysTest {
     @BeforeEach
     void beforeEach() {
         posService.clear();
-        //TODO: Uncomment after user service is implemented
-        //userService.clear();
+        userService.clear();
         RestAssured.baseURI = "http://localhost:" + port;
     }
 
